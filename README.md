@@ -2,7 +2,7 @@
 
 Forked from [battila7/get-version-action](https://github.com/battila7/get-version-action)
 
-A GitHub Action which extracts the version from `github.ref`.
+A GitHub Action which extracts the version from [github.ref](https://docs.github.com/en/actions/learn-github-actions/contexts#github-context).
 
 Finally, you can reliably get the pushed version on every platform. Now includes support for semver!
 
@@ -45,11 +45,24 @@ The semver build version, for example `BUILD.1` in the case of `v1.2.3-ALPHA.0+B
 ## Example usage
 
 ```yaml
-steps:
-  - id: get_version
-    uses: thombashi/get-version-action@v2
+name: Example Usage
 
-  - run: echo ${{ steps.get_version.outputs.version }}
+on:
+  push:
+    tags:
+      - "v*.*.*"
 
-  - run: echo ${{ steps.get_version.outputs.version-without-v }}
+jobs:
+  example:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - id: get_version
+        uses: thombashi/get-version-action@v2
+
+      - name: echo outputs
+        run: |
+          echo "version: ${{ steps.get_version.outputs.version }}"
+          echo "version-without-v: ${{ steps.get_version.outputs.version-without-v }}"
 ```
