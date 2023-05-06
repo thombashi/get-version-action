@@ -1,3 +1,6 @@
+VERSION := $(shell jq -r '.version' package.json)
+TAG := v$(VERSION)
+
 .PHONY: lint
 lint:
 	npm run-script lint
@@ -14,3 +17,11 @@ test:
 upgrade:
 	npx npm-check-updates --upgrade --timeout 60000
 	npm install
+
+.PHONY: tag
+tag:
+	git tag $(TAG)
+
+.PHONY: push-tag
+push-tag:
+	git push origin $(TAG)
