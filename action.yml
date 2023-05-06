@@ -1,4 +1,4 @@
-name: 'Get Version'
+name: 'get-version'
 description: 'Extracts the version from github.ref.'
 outputs:
   version:
