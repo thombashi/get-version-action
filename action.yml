@@ -1,5 +1,5 @@
-name: 'Get Version Action'
-description: 'Extracts the version from github.ref.'
+name: 'Extracts the version from github context'
+description: 'Extracts the version information from github.ref property'
 outputs:
   version:
     description: 'The pushed version, for example "v1.2.7"'
