@@ -12,14 +12,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/battila7/get-version-action.git"
+    "url": "git+https://github.com/thombashi/get-version-action.git"
   },
   "author": "Attila Bagossy",
+  "contributors": [
+    {
+      "name": "Tsuyoshi Hombashi",
+      "email": "tsuyoshi.hombashi@gmail.com",
+      "url": "https://github.com/thombashi"
+    }
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/battila7/get-version-action/issues"
+    "url": "https://github.com/thombashi/get-version-action/issues"
   },
-  "homepage": "https://github.com/battila7/get-version-action#readme",
+  "homepage": "https://github.com/thombashi/get-version-action",
   "dependencies": {
     "@actions/core": "1.9.1",
     "@actions/github": "4.0.0",
